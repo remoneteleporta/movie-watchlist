@@ -1,0 +1,44 @@
+html,body{
+    margin: 0;
+    padding: 0;
+}
+
+header{
+    background-image: url("movie-watchlist-banner.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    z-index: 1;
+    height: 140px;
+    position: relative;
+}
+
+.hero-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5em;
+    z-index: 5;
+    color: white;
+}
+
+h1{
+    font-size: 2em;
+}
+
+.hero-nav a{
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 1.07em;
+}
+
+.blur {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(2px);
+    z-index: -1;
+}
