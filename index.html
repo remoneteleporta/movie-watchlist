@@ -8,6 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/dompurify@3.0.5/dist/purify.min.js"></script>
 </head>
 
 <body>
@@ -21,13 +22,13 @@
 
 <div class="search-bar">
 <img id="search-icon" src="/assets/search-icon.svg" alt="search icon">
-<input type="search" placeholder="Search for a movie"><button id="search-btn">Search</button>
+<input id="title-input" type="search" placeholder="Search for movie or series"><button id="search-btn">Search</button>
 </div>
 </header>
 
 <main>
 <section id="movies-list"></section>
 </main>
-
+<script src="index.js"></script>
 </body>
 </html>
