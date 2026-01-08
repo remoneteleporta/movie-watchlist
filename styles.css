@@ -89,3 +89,34 @@ font-size: 0.9em;
     transform: scale(0.96);
     box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }
+
+/* Movie List on Watclist page */
+
+#movies-list{
+    padding: 2em;
+}
+
+.movie, .title-rating, .runtime-genre{
+    display: flex;
+}
+
+.movie{
+    gap: 2em;
+    border-bottom: 2px solid #E5E7EB;
+    padding: 1em;
+    margin: auto;
+}
+
+.title-rating, .runtime-genre{
+    gap: 1em;
+    align-items: center;
+}
+
+.movie-text{
+    display: block;
+}
+
+.movie-poster{
+    width: 10em;
+    object-fit: contain;
+}

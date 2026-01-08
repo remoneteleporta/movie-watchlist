@@ -4,6 +4,7 @@ const searchBtn = document.getElementById("search-btn")
 searchBtn.addEventListener("click", ()=>{
 let title = document.getElementById("title-input").value
 const cleantitle = DOMPurify.sanitize(title)
+movieListSection.innerHTML =``
 findMovie(cleantitle)
 })
 
@@ -26,7 +27,17 @@ async function findMovie(movieTitle){
 function renderMovie(movies){
     
     movieListSection.innerHTML += [movies].map(movie =>{
-        return `<div class="movie"><img class="movie-poster" src="${movie.Poster}"></div>`
+        return `<div class="movie">
+        <img class="movie-poster" src="${movie.Poster}">
+        <div class="movie-text">
+        <div class="title-rating">
+        <h2>${movie.Title}</h2><p>⭐${movie.imdbRating}</p></div>
+        <div class="runtime-genre">
+        <p>${movie.Runtime}</p><p>${movie.Genre}</p><button id="watchlist-btn">Watchlist</button>
+        </div>
+        <p class="plot">${movie.Plot}</p>
+        </div>
+        </div>`
     })
     
 }
