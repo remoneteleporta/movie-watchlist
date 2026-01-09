@@ -5,6 +5,12 @@ html,body{
     height: 100vh;
 }
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 /* Hero Nav Section */
 
 header{
@@ -119,4 +125,17 @@ font-size: 0.9em;
 .movie-poster{
     width: 10em;
     object-fit: contain;
+}
+
+#watchlist-btn{
+    background-color: inherit;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+}
+
+#watchlist-btn img{
+    width: 18px;
 }

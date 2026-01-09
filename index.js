@@ -1,7 +1,8 @@
 const movieListSection = document.getElementById("movies-list")
-const searchBtn = document.getElementById("search-btn")
+const searchForm = document.querySelector(".search-bar")
 
-searchBtn.addEventListener("click", ()=>{
+searchForm.addEventListener("submit", (e) => {
+  e.preventDefault();
 let title = document.getElementById("title-input").value
 const cleantitle = DOMPurify.sanitize(title)
 movieListSection.innerHTML =``
@@ -28,12 +29,12 @@ function renderMovie(movies){
     
     movieListSection.innerHTML += [movies].map(movie =>{
         return `<div class="movie">
-        <img class="movie-poster" src="${movie.Poster}">
+        <img class="movie-poster" alt="${movie.Title}" src="${movie.Poster}" onerror="this.onerror=null; this.src='/assets/default-poster.jpg';">
         <div class="movie-text">
         <div class="title-rating">
         <h2>${movie.Title}</h2><p>⭐${movie.imdbRating}</p></div>
         <div class="runtime-genre">
-        <p>${movie.Runtime}</p><p>${movie.Genre}</p><button id="watchlist-btn">Watchlist</button>
+        <p>${movie.Runtime}</p><p>${movie.Genre}</p><button id="watchlist-btn"><img src="/assets/add.png"> Watchlist</button>
         </div>
         <p class="plot">${movie.Plot}</p>
         </div>
