@@ -127,7 +127,7 @@ font-size: 0.9em;
     object-fit: contain;
 }
 
-#watchlist-btn{
+.watchlist-btn, .remove-btn{
     background-color: inherit;
     border: none;
     cursor: pointer;
@@ -136,6 +136,6 @@ font-size: 0.9em;
     gap: 0.5em;
 }
 
-#watchlist-btn img{
+.watchlist-btn img, .remove-btn img{
     width: 18px;
 }
