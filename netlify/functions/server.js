@@ -1,4 +1,4 @@
-import { findMovie } from "../../utils/findMovie.js"
+import { findMovie } from "../../utils/findmovie.js"
 
 export async function handler(event) {
   const apiKey = process.env.OMDB_API_KEY
