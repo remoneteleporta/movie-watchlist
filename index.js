@@ -14,7 +14,7 @@ let moviesArray = []
 
 fetch(`/.netlify/functions/server?title=${cleantitle}`)
   .then(res => res.json())
-  .then(data =>{ 
+  .then(data =>{ console.log(data)
     moviesArray = data
     renderMovie(movieListSection, moviesArray)
   })
