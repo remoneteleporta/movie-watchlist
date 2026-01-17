@@ -5,9 +5,11 @@ export function renderMovie(movieContainer, movies){
         return;
     }
     
+    const filteredMovies = [...new Map(movies.map(movie => [movie.imdbID, movie])).values()]
+
     movieContainer.innerHTML =``
     
-    movieContainer.innerHTML = movies.map(movie =>{ 
+    movieContainer.innerHTML = filteredMovies.map(movie =>{ 
         return `<div class="movie">
         <img class="movie-poster" alt="${movie.Title}" src="${movie.Poster}" onerror="this.onerror=null; this.src='/assets/default-poster.jpg';">
         <div class="movie-text">
