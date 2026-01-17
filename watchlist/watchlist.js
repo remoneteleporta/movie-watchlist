@@ -1,5 +1,20 @@
 import { renderWatchlist } from '../utils/renderwatchlist.js'
-const myWatchlist = localStorage.getItem("myWatchlist")
-const watchListSection = document.getElementById("watch-list")
+import { removefromWatchlist } from '../utils/removefromwatchlist.js'
 
-document.addEventListener("DOMContentLoaded", ()=> renderWatchlist(watchListSection, myWatchlist))
+const parsedWatchlist = JSON.parse(localStorage.getItem("myWatchlist"))
+
+const watchListSection = document.getElementById("watch-list")
+const movieRemoved = document.getElementById("movie-remove-msg")
+
+document.addEventListener("DOMContentLoaded", ()=> renderWatchlist(watchListSection, parsedWatchlist))
+
+watchListSection.addEventListener("click", (e)=> {
+    for (const movie of parsedWatchlist) {
+            if (movie.imdbID === e.target.dataset.movieid) {
+                const newWatchList = removefromWatchlist(parsedWatchlist, movie, movieRemoved)
+                console.log(newWatchList)
+                renderWatchlist(watchListSection, newWatchList)
+                break
+            }
+        }
+    })

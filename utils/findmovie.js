@@ -1,9 +1,9 @@
 let moviesList = []
 
-export async function findMovie(movieTitle) {
+export async function findMovie(movieTitle, apiKey) {
     try {
         const response = await fetch(
-            `https://www.omdbapi.com/?apikey=881c9de6&s=${encodeURIComponent(movieTitle)}`
+            `https://www.omdbapi.com/?apikey=${apiKey}&s=${encodeURIComponent(movieTitle)}`
         );
         const movieData = await response.json();
 
@@ -13,7 +13,7 @@ export async function findMovie(movieTitle) {
         }
 
         const detailPromises = movieData.Search.map(item =>
-            fetch(`https://www.omdbapi.com/?apikey=881c9de6&i=${item.imdbID}`)
+            fetch(`https://www.omdbapi.com/?apikey=${apiKey}&i=${item.imdbID}`)
                 .then(res => res.json())
         );
 

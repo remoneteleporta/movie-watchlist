@@ -139,3 +139,16 @@ font-size: 0.9em;
 .watchlist-btn img, .remove-btn img{
     width: 18px;
 }
+
+#movie-added-msg, #movie-exists-msg, #movie-remove-msg{
+    background-color: whitesmoke;
+    margin: auto;
+    z-index: 10;
+    position: fixed;
+    top: 50%;
+    left: 45%;
+    text-align: center;
+    border: 2px outset rgba(190, 175, 175, 0.858);
+    visibility: hidden;
+    padding: 1em;
+}
