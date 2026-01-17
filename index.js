@@ -1,4 +1,3 @@
-import{ findMovie } from '/utils/findmovie.js'
 import { renderMovie } from '/utils/rendermovie.js'
 import { addtoWatchlist } from '/utils/addtowatchlist.js'
 
@@ -11,13 +10,14 @@ searchForm.addEventListener("submit", async (e) => {
   e.preventDefault();
 let title = document.getElementById("title-input").value
 const cleantitle = DOMPurify.sanitize(title)
+let moviesArray = []
 
-const apiKey = process.env.OMDB_API_KEY
-
-const moviesArray = await findMovie(cleantitle, apiKey)
-
-renderMovie(movieListSection, moviesArray)
-
+fetch(`/.netlify/functions/server?title=${cleantitle}`)
+  .then(res => res.json())
+  .then(data =>{ 
+    moviesArray = data
+    renderMovie(movieListSection, moviesArray)
+  })
 
 movieListSection.addEventListener("click", (e) =>{
 
