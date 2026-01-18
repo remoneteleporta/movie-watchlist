@@ -11,14 +11,17 @@ searchForm.addEventListener("submit", async (e) => {
 let title = document.getElementById("title-input").value
 const cleantitle = DOMPurify.sanitize(title)
 let moviesArray = []
+moviesArray = await serverHandle(cleantitle)
+renderMovie(movieListSection, moviesArray)
 
-fetch(`/.netlify/functions/server?title=${cleantitle}`)
+async function serverHandle(cleantitle){
+await fetch(`/.netlify/functions/server?title=${cleantitle}`)
   .then(res => res.json())
   .then(data =>{ console.log(data)
-    moviesArray = data
-    renderMovie(movieListSection, moviesArray)
+    moviesArray = JSON.parse(data)
+    return moviesArray
   })
-
+}
 movieListSection.addEventListener("click", (e) =>{
 
 for (const movie of moviesArray) {

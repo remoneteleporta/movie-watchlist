@@ -8,6 +8,6 @@ export async function handler(event) {
 
   return {
     statusCode: 200,
-    body: movie,
+    body: JSON.stringify(movie),
   };
 }
