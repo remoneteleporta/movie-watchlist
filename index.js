@@ -17,7 +17,7 @@ renderMovie(movieListSection, moviesArray)
 async function serverHandle(cleantitle){
 await fetch(`/.netlify/functions/server?title=${cleantitle}`)
   .then(res => res.json())
-  .then(data =>{ console.log(data)
+  .then(data =>{
     moviesArray = data
     return moviesArray
   })

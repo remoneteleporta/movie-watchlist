@@ -4,7 +4,7 @@ export function renderMovie(movieContainer, movies){
         console.error("Target container not found!");
         return;
     }
-    
+    console.log(movies)
     const filteredMovies = [...new Map(movies.map(movie => [movie.imdbID, movie])).values()]
 
     movieContainer.innerHTML =``
