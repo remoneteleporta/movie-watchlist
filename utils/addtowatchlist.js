@@ -4,7 +4,7 @@ export function addtoWatchlist(addMovie, newmovieAdded, movienotAdded)
         console.error("Invalid movie object")
         return
     }
-
+    console.log(addMovie)
     let localWatchList = JSON.parse(localStorage.getItem("myWatchlist")) || []
     
     const movieExists = localWatchList.some(movie => movie.imdbID === addMovie.imdbID)
