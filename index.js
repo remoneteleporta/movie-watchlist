@@ -15,13 +15,13 @@ let moviesArray = await serverHandle(cleantitle)
 console.log(moviesArray)
 renderMovie(movieListSection, moviesArray)
 
-async function serverHandle(cleantitle){
-await fetch(`/.netlify/functions/server?title=${cleantitle}`)
-  .then(res => res.json())
-  .then(data =>{
-    return data
-  })
+async function serverHandle(cleantitle) {
+  const res = await fetch(`/.netlify/functions/server?title=${cleantitle}`)
+  const data = await res.json()
+  return data
 }
+
+
 movieListSection.addEventListener("click", (e) =>{
 
 for (const movie of moviesArray) {
