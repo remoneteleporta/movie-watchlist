@@ -24,7 +24,6 @@ movieListSection.addEventListener("click", (e) =>{
 
 for (const movie of moviesArray) {
         if (movie.imdbID === e.target.dataset.movieid) {
-          console.log(movie)
             addtoWatchlist(movie, newmovieAdded, movienotAdded)
             break
         }
