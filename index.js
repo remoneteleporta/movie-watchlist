@@ -12,7 +12,6 @@ let title = document.getElementById("title-input").value
 const cleantitle = DOMPurify.sanitize(title)
 
 let moviesArray = await serverHandle(cleantitle)
-console.log(moviesArray)
 renderMovie(movieListSection, moviesArray)
 
 async function serverHandle(cleantitle) {
