@@ -18,7 +18,7 @@ async function serverHandle(cleantitle){
 await fetch(`/.netlify/functions/server?title=${cleantitle}`)
   .then(res => res.json())
   .then(data =>{ console.log(data)
-    moviesArray = JSON.parse(data)
+    moviesArray = data
     return moviesArray
   })
 }
