@@ -6,7 +6,7 @@ const parsedWatchlist = JSON.parse(localStorage.getItem("myWatchlist"))
 const watchListSection = document.getElementById("watch-list")
 const movieRemoved = document.getElementById("movie-remove-msg")
 
-document.addEventListener("DOMContentLoaded", ()=> renderWatchlist(watchListSection))
+document.addEventListener("DOMContentLoaded", ()=> renderWatchlist(watchListSection, parsedWatchlist))
 
 watchListSection.addEventListener("click", (e)=> {
     for (const movie of parsedWatchlist) {
