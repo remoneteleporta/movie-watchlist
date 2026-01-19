@@ -1,7 +1,7 @@
 import { renderWatchlist } from '../utils/renderwatchlist.js'
 import { removefromWatchlist } from '../utils/removefromwatchlist.js'
 
-const parsedWatchlist = JSON.parse(localStorage.getItem("myWatchlist"))
+let parsedWatchlist = JSON.parse(localStorage.getItem("myWatchlist"))
 
 const watchListSection = document.getElementById("watch-list")
 const movieRemoved = document.getElementById("movie-remove-msg")
