@@ -157,14 +157,11 @@ font-size: 0.9em;
     padding: 1em;
 }
 
-.runtime-genre{
+.runtime-genre, .plot{
     font-weight: 400;
-    font-size: 0.75em;
     line-height: 1.25em;
 }
 
 .plot{
     color: #6B7280;
-    font-weight: 400;
-    line-height: 1.25em;
 }
