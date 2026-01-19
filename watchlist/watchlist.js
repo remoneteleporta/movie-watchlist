@@ -6,14 +6,13 @@ const parsedWatchlist = JSON.parse(localStorage.getItem("myWatchlist"))
 const watchListSection = document.getElementById("watch-list")
 const movieRemoved = document.getElementById("movie-remove-msg")
 
-document.addEventListener("DOMContentLoaded", ()=> renderWatchlist(watchListSection, parsedWatchlist))
+document.addEventListener("DOMContentLoaded", ()=> renderWatchlist(watchListSection))
 
 watchListSection.addEventListener("click", (e)=> {
     for (const movie of parsedWatchlist) {
             if (movie.imdbID === e.target.dataset.movieid) {
-                const newWatchList = removefromWatchlist(parsedWatchlist, movie, movieRemoved)
-                console.log(newWatchList)
-                renderWatchlist(watchListSection, newWatchList)
+                removefromWatchlist(parsedWatchlist, movie, movieRemoved)
+                renderWatchlist(watchListSection)
                 break
             }
         }
