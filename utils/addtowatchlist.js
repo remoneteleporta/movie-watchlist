@@ -11,12 +11,12 @@ export function addtoWatchlist(addMovie, newmovieAdded, movienotAdded)
     
     if (movieExists) {
         movienotAdded.style.visibility = 'visible'
-        setTimeout(()=>{movienotAdded.style.visibility = 'hidden'}, 2000)
+        setTimeout(()=>{movienotAdded.style.visibility = 'hidden'}, 1000)
         return
     }else{
     localWatchList.push(addMovie)
     localStorage.setItem("myWatchlist", JSON.stringify(localWatchList))
     newmovieAdded.style.visibility = 'visible'
-    setTimeout(()=>{newmovieAdded.style.visibility = 'hidden'}, 2000)
+    setTimeout(()=>{newmovieAdded.style.visibility = 'hidden'}, 1000)
     }
 }
