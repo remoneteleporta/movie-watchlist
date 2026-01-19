@@ -1,8 +1,6 @@
-export function renderWatchlist(watchlistContainer){
+export function renderWatchlist(watchlistContainer, parsedWatchlist){
 
-    const parsedWatchlist = JSON.parse(localStorage.getItem("myWatchlist"))
-
-watchlistContainer.innerHTML += parsedWatchlist.map(movie =>{ 
+watchlistContainer.innerHTML = parsedWatchlist.map(movie =>{ 
         return `<div class="movie">
         <img class="movie-poster" alt="${movie.Title}" src="${movie.Poster}" onerror="this.onerror=null; this.src='/assets/default-poster.jpg';">
         <div class="movie-text">

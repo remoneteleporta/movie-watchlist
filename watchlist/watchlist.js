@@ -11,8 +11,8 @@ document.addEventListener("DOMContentLoaded", ()=> renderWatchlist(watchListSect
 watchListSection.addEventListener("click", (e)=> {
     for (const movie of parsedWatchlist) {
             if (movie.imdbID === e.target.dataset.movieid) {
-                removefromWatchlist(parsedWatchlist, movie, movieRemoved)
-                renderWatchlist(watchListSection)
+                const newWatchlist = removefromWatchlist(parsedWatchlist, movie, movieRemoved)
+                renderWatchlist(watchListSection, newWatchlist)
                 break
             }
         }

@@ -1,8 +1,10 @@
 export function removefromWatchlist(parsedWatchlist, removeMovie, movieRemoved)
 {   
     localStorage.removeItem("myWatchlist")
-    const newWatchList = parsedWatchlist.filter(movie => movie.imdbID !== removeMovie.imdbID)
-    localStorage.setItem("myWatchlist", JSON.stringify(newWatchList))
-    return
+    console.log(localStorage.getItem("myWatchlist"))
+    const newWatchlist = parsedWatchlist.filter(movie => movie.imdbID !== removeMovie.imdbID)
+    localStorage.setItem("myWatchlist", JSON.stringify(newWatchlist))
+    console.log(localStorage.getItem("myWatchlist"))
+    return newWatchlist
 }
 
