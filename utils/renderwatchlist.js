@@ -1,5 +1,6 @@
 export function renderWatchlist(watchlistContainer, parsedWatchlist){
-
+    console.log(parsedWatchlist)
+    
     if(parsedWatchlist === null || parsedWatchlist.length < 0){
       watchlistContainer.innerHTML = `<div class="watchlist-empty-msg"><p>Your Watchlist is looking a little empty...</p>
       <a href="/"><img src="/assets/add.png">Let's add some movies!</a></div>`
