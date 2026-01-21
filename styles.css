@@ -140,7 +140,7 @@ font-size: 0.9em;
     gap: 0.5em;
 }
 
-.watchlist-btn img, .remove-btn img{
+.watchlist-btn img, .remove-btn img, .watchlist-empty-msg img{
     width: 18px;
 }
 
@@ -150,8 +150,8 @@ font-size: 0.9em;
     z-index: 10;
     position: fixed;
     top: 50%;
-    left: 0;
-    right: 0;
+    left: 50%;
+    right: 50%;
     text-align: center;
     border: 2px outset rgba(190, 175, 175, 0.858);
     visibility: hidden;
@@ -169,4 +169,19 @@ font-size: 0.9em;
 
 .plot{
     color: #515157;
+}
+
+.watchlist-empty-msg{
+    font-weight: 700;
+    margin: auto;
+    text-align: center;
+    color: #DFDDDD;
+}
+
+.watchlist-empty-msg a{
+   display: flex;
+   justify-content: center;
+   text-decoration: none;
+   gap: 0.5em;
+   color: #363636;
 }

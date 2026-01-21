@@ -1,8 +1,8 @@
 export function renderWatchlist(watchlistContainer, parsedWatchlist){
 
     if(parsedWatchlist === null){
-      watchlistContainer.innerHTML = `<p id="watchlist-empty-msg">Your Watchlist is looking a little empty...</p>
-      <a href="/"><img src="/assets/add.png">Let's add some movies!</a>`
+      watchlistContainer.innerHTML = `<div class="watchlist-empty-msg"><p>Your Watchlist is looking a little empty...</p>
+      <a href="/"><img src="/assets/add.png">Let's add some movies!</a></div>`
     }
 else{
     watchlistContainer.innerHTML = parsedWatchlist.map(movie =>{ 
